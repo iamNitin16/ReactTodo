@@ -22,7 +22,9 @@ module.exports = {
 	},
 	resolve : {
 		alias : {
-		
+			Todo : path.resolve(__dirname, 'app/components/Todo'),
+			TodoList : path.resolve(__dirname, 'app/components/TodoList'),
+			TodoApp : path.resolve(__dirname, 'app/components/TodoApp')
 		},
 		extensions : ['.js', '.jsx']
 	},
