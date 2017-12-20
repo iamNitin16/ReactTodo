@@ -24,7 +24,8 @@ module.exports = {
 		alias : {
 			Todo : path.resolve(__dirname, 'app/components/Todo'),
 			TodoList : path.resolve(__dirname, 'app/components/TodoList'),
-			TodoApp : path.resolve(__dirname, 'app/components/TodoApp')
+			TodoApp : path.resolve(__dirname, 'app/components/TodoApp'),
+			AddTodo : path.resolve(__dirname, 'app/components/AddTodo')
 		},
 		extensions : ['.js', '.jsx']
 	},
