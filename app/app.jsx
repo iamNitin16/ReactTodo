@@ -12,10 +12,6 @@ var unsubscribe = store.subscribe(() => {
 	console.log('New state', store.getState());
 });
 
-store.dispatch(actions.addTodo('clean the yard'));
-store.dispatch(actions.setSearchText('yard'));
-store.dispatch(actions.toggleShowCompleted());
-
 // Load Foundation
 require('style-loader!css-loader!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
