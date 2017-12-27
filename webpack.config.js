@@ -56,7 +56,8 @@ module.exports = {
 			TodoAPI : path.resolve(__dirname, 'app/api/TodoAPI'),
 			actions : path.resolve(__dirname, 'app/actions/actions'),
 			reducers : path.resolve(__dirname, 'app/reducers/reducers'),
-			configureStore : path.resolve(__dirname, 'app/store/configureStore')
+			configureStore : path.resolve(__dirname, 'app/store/configureStore'),
+			Login : path.resolve(__dirname, 'app/components/Login')
 		},
 		extensions : ['.js', '.jsx']
 	},
