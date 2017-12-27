@@ -9,14 +9,7 @@ var TodoAPI = require('TodoAPI');
 var actions = require('actions');
 var store = require('configureStore').configure();
 
-var unsubscribe = store.subscribe(() => {
-	var state = store.getState();
-	console.log('New state', state);
-	TodoAPI.setTodos(state.todos);
-});
-
-var initialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+store.dispatch(actions.startAddTodos());
 
 // Load Foundation
 require('style-loader!css-loader!foundation-sites/dist/foundation.min.css')

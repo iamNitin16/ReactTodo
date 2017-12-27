@@ -49,10 +49,45 @@ export var addTodos = (todos) => {
 	};
 };
 
+export var startAddTodos = () => {
+	return (dispatch, getState) => {
+		var todosRef = firebaseRef.child('todos');
+
+		return todosRef.once('value').then((snapshot) => {
+			var todos = snapshot.val() || {};
+			var parseTodos = [];
+
+			Object.keys(todos).forEach((todoId) => {
+				parseTodos.push({
+					id : todoId,
+					...todos[todoId]
+				});
+			});
+
+			dispatch(addTodos(parseTodos));
+		});
+	};
+};
+
 //toggleTodo(id) TOGGLE_TODO
-export var toggleTodo = (id) => {
+export var updateTodo = (id, updates) => {
 	return {
-		type : 'TOGGLE_TODO',
-		id
+		type : 'UPDATE_TODO',
+		id,
+		updates
+	};
+};
+
+export var startToggleTodo = (id, completed) => {
+	return (dispatch, getState) => {
+		var todoRef = firebaseRef.child(`todos/${id}`);
+		var updates = {
+			completed : completed,
+			completedAt : completed ? moment().unix() : null
+		};
+
+		return todoRef.update(updates).then(() => {
+			dispatch(updateTodo(id, updates));
+		});
 	};
 };
