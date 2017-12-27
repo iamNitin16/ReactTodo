@@ -37,7 +37,8 @@ module.exports = {
 				DATABASE_URL : JSON.stringify(process.env.DATABASE_URL),
 				PROJECT_ID : JSON.stringify(process.env.PROJECT_ID),
 				STORAGE_BUCKET : JSON.stringify(process.env.STORAGE_BUCKET),
-				MESSANGING_SENDER_ID : JSON.stringify(process.env.MESSANGING_SENDER_ID)
+				MESSANGING_SENDER_ID : JSON.stringify(process.env.MESSANGING_SENDER_ID),
+				GITHUB_ACCESS_TOKEN : JSON.stringify(process.env.GITHUB_ACCESS_TOKEN)
 			}
 		})
 	],
